@@ -13,17 +13,17 @@
 
 <body>
 
-<h1 id="titlePage">POSTALES DEL MUNDO</h1>
+<h1>POSTALES DEL MUNDO</h1>
 
-<div class="scene">
+<div id="app">
 
     <div class="card" id="card">
 
         <div class="front face">
-            <div class="photoSide">
+            <div class="imgBox">
                 <img id="img">
             </div>
-            <div class="textSide">
+            <div class="titleBox">
                 <h2 id="title"></h2>
             </div>
         </div>
@@ -35,14 +35,14 @@
 
     </div>
 
+    <div class="buttons">
+        <button id="prev">◀</button>
+        <button id="next">▶</button>
+    </div>
+
 </div>
 
-<div class="buttons">
-    <button id="prev">◀</button>
-    <button id="next">▶</button>
-</div>
-
-<div id="gallery" class="hidden"></div>
+<div id="gallery"></div>
 
 <script src="script.js"></script>
 </body>

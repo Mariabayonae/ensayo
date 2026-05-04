@@ -1,37 +1,44 @@
 body{
     margin:0;
     font-family:'Baloo 2', sans-serif;
-    transition:background 1s ease;
+    background:#f3f4f6;
+
     display:flex;
     flex-direction:column;
     align-items:center;
+    justify-content:flex-start;
+
+    min-height:100vh;
 }
 
-/* TÍTULO CENTRADO */
+/* TITULO GRANDE */
 h1{
     font-family:'Archivo Black', sans-serif;
-    font-size:60px;
-    margin:30px 0;
+    font-size:64px;
+    margin:40px 0 10px 0;
     text-align:center;
 }
 
-/* ESCENA */
-.scene{
-    perspective:1200px;
+/* APP CENTRADA REAL */
+#app{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    margin-top:20px;
 }
 
-/* POSTAL */
+/* POSTAL GRANDE REAL */
 .card{
-    width:800px;
-    height:420px;
+    width:900px;
+    height:500px;
+
     position:relative;
     transform-style:preserve-3d;
     transition:transform 0.8s;
 
-    border:2px dashed #bbb;
-    border-radius:12px;
-
-    box-shadow:0 25px 60px rgba(0,0,0,0.2);
+    border-radius:14px;
+    box-shadow:0 30px 70px rgba(0,0,0,0.25);
     cursor:pointer;
 }
 
@@ -46,85 +53,78 @@ h1{
     width:100%;
     height:100%;
     backface-visibility:hidden;
-    display:flex;
-    border-radius:12px;
+
+    border-radius:14px;
     overflow:hidden;
+    display:flex;
 }
 
-/* FRONT postal real */
+/* FRONT */
 .front{
     background:white;
 }
 
-/* foto lado */
-.photoSide{
-    width:50%;
+/* imagen grande */
+.imgBox{
+    width:60%;
 }
 
-.photoSide img{
+.imgBox img{
     width:100%;
     height:100%;
     object-fit:cover;
 }
 
 /* texto lado */
-.textSide{
-    width:50%;
+.titleBox{
+    width:40%;
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:26px;
+    font-size:28px;
     font-weight:bold;
+    padding:20px;
 }
 
 /* BACK */
 .back{
     transform:rotateY(180deg);
     background:white;
+
+    display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    padding:30px;
+
+    padding:40px;
     text-align:center;
+    font-size:18px;
+    line-height:1.5;
 }
 
-/* BOTONES */
+/* BOTONES 2D (IMPORTANTE) */
 .buttons{
-    margin-top:20px;
+    margin-top:25px;
 }
 
 button{
-    width:50px;
-    height:50px;
+    width:70px;
+    height:45px;
+
     margin:10px;
-    border:none;
+
     background:#111;
     color:white;
-    font-size:20px;
+    border:none;
+
     cursor:pointer;
+
+    box-shadow:0 5px 0 #000;
+    transition:0.2s;
 }
 
-/* click color */
+/* click 2D real */
 button:active{
-    background:#444;
-}
-
-/* GALLERY FINAL */
-.hidden{
-    display:none;
-}
-
-#gallery{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    justify-content:center;
-    margin-top:20px;
-}
-
-.smallCard{
-    width:180px;
-    height:120px;
-    background:white;
-    border:1px solid #ccc;
+    transform:translateY(4px);
+    box-shadow:0 1px 0 #000;
 }
