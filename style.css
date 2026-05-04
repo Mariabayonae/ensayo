@@ -1,36 +1,37 @@
 body{
     margin:0;
     font-family:'Baloo 2', sans-serif;
-    background:#f4f4f4;
+    transition:background 1s ease;
     display:flex;
     flex-direction:column;
     align-items:center;
 }
 
-/* TÍTULO GRANDE */
+/* TÍTULO CENTRADO */
 h1{
     font-family:'Archivo Black', sans-serif;
-    font-size:55px;
+    font-size:60px;
     margin:30px 0;
-    text-transform:uppercase;
+    text-align:center;
 }
 
 /* ESCENA */
 .scene{
-    perspective:1000px;
+    perspective:1200px;
 }
 
-/* POSTAL GRANDE */
+/* POSTAL */
 .card{
-    width:750px;
-    height:450px;
+    width:800px;
+    height:420px;
     position:relative;
     transform-style:preserve-3d;
     transition:transform 0.8s;
 
-    box-shadow:0 20px 50px rgba(0,0,0,0.15);
+    border:2px dashed #bbb;
     border-radius:12px;
 
+    box-shadow:0 25px 60px rgba(0,0,0,0.2);
     cursor:pointer;
 }
 
@@ -45,33 +46,41 @@ h1{
     width:100%;
     height:100%;
     backface-visibility:hidden;
+    display:flex;
     border-radius:12px;
     overflow:hidden;
-    background:white;
-    border:2px dashed #ccc;
 }
 
-/* FRONT */
+/* FRONT postal real */
 .front{
-    display:flex;
-    flex-direction:column;
+    background:white;
 }
 
-.front img{
+/* foto lado */
+.photoSide{
+    width:50%;
+}
+
+.photoSide img{
     width:100%;
-    height:80%;
+    height:100%;
     object-fit:cover;
 }
 
-.front h2{
-    text-align:center;
-    margin:10px;
+/* texto lado */
+.textSide{
+    width:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:26px;
+    font-weight:bold;
 }
 
 /* BACK */
 .back{
     transform:rotateY(180deg);
-    display:flex;
+    background:white;
     flex-direction:column;
     justify-content:center;
     align-items:center;
@@ -79,24 +88,43 @@ h1{
     text-align:center;
 }
 
-/* BOTÓN */
-.btn{
-    margin:30px;
-    padding:14px 28px;
+/* BOTONES */
+.buttons{
+    margin-top:20px;
+}
+
+button{
+    width:50px;
+    height:50px;
+    margin:10px;
+    border:none;
     background:#111;
     color:white;
-    border:none;
-    border-radius:8px;
+    font-size:20px;
     cursor:pointer;
-    box-shadow:0 6px 0 #000;
 }
 
-/* click efecto */
-.btn:active{
-    transform:translateY(4px);
-    box-shadow:0 2px 0 #000;
-}
-
-.btn.clicked{
+/* click color */
+button:active{
     background:#444;
+}
+
+/* GALLERY FINAL */
+.hidden{
+    display:none;
+}
+
+#gallery{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.smallCard{
+    width:180px;
+    height:120px;
+    background:white;
+    border:1px solid #ccc;
 }
