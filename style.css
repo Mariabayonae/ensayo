@@ -2,50 +2,58 @@ body{
     margin:0;
     font-family:'Inter', sans-serif;
     background:#f5f5f5;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
-/* TITULO */
-.title{
-    font-family:'Archivo Black', sans-serif;
+h1{
+    width:100%;
     text-align:center;
+    font-family:'Archivo Black', sans-serif;
     font-size:64px;
     margin:30px 0;
 }
 
-/* CENTRADO REAL */
+
 #app{
+    width:100%;
     display:flex;
     flex-direction:column;
     align-items:center;
-    justify-content:center;
-    min-height:80vh;
 }
 
-/* POSTAL GRANDE Y CENTRADA */
+/
 .scene{
-    perspective:1200px;
+    width:100%;
     display:flex;
     justify-content:center;
 }
 
-.card{
-    width:1000px;
-    height:600px;
-    position:relative;
 
+.card{
+    width:1050px;   /* MÁS GRANDE */
+    height:620px;   /* MÁS GRANDE */
+
+    position:relative;
     transform-style:preserve-3d;
     transition:transform 0.8s;
 
     border-radius:16px;
     box-shadow:0 30px 80px rgba(0,0,0,0.25);
+
     cursor:pointer;
 }
 
-.card.flipped{
-    transform:rotateY(180deg);
+/* RESPONSIVE */
+@media(max-width:1100px){
+    .card{
+        width:92vw;
+        height:60vh;
+    }
 }
 
-/* CARAS */
+
 .front, .back{
     position:absolute;
     width:100%;
@@ -56,7 +64,7 @@ body{
     overflow:hidden;
 }
 
-/* FRONT */
+
 .front img{
     width:65%;
     height:100%;
@@ -69,23 +77,21 @@ body{
     justify-content:center;
     align-items:center;
     text-align:center;
-    font-size:34px;
-    font-weight:600;
+    font-size:32px;
 }
 
-/* BACK (info clara) */
+/* BACK */
 .back{
     transform:rotateY(180deg);
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    padding:60px;
+    padding:50px;
     text-align:center;
     font-size:18px;
-    line-height:1.6;
 }
 
-/* BOTONES 2D REALES */
+
 .buttons{
     margin-top:25px;
 }
@@ -102,30 +108,38 @@ button{
 
     cursor:pointer;
 
+   
     box-shadow:0 6px 0 #000;
+
     transition:0.15s;
-    font-family:'Inter', sans-serif;
 }
 
-/* efecto 2D real */
+
 button:active{
     transform:translateY(4px);
     box-shadow:0 2px 0 #000;
 }
 
-/* GALERÍA FINAL */
+
+button.clicked{
+    background:#333;
+}
+
+
 #gallery{
     display:none;
     flex-wrap:wrap;
     justify-content:center;
     align-items:center;
-    gap:20px;
-    padding:60px;
+    gap:25px;
+    padding:50px;
 }
 
+
 .small{
-    width:260px;
-    height:180px;
+    width:320px;
+    height:220px;
+
     border-radius:12px;
     overflow:hidden;
     box-shadow:0 15px 40px rgba(0,0,0,0.2);
