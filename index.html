@@ -6,28 +6,33 @@
 
 <title>Postales del mundo</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>POSTALES DEL MUNDO</h1>
+<h1 class="title">POSTALES DEL MUNDO</h1>
 
 <div id="app">
 
-    <div class="card" id="card">
+    <div class="scene">
 
-        <div class="front face">
-            <img id="img">
-            <h2 id="title"></h2>
+        <div class="card" id="card">
+
+            <div class="front">
+                <img id="img">
+                <h2 id="title"></h2>
+            </div>
+
+            <div class="back">
+                <h2 id="titleBack"></h2>
+                <p id="desc"></p>
+            </div>
+
         </div>
 
-        <div class="back face">
-            <h2 id="titleBack"></h2>
-            <p id="desc"></p>
-        </div>
     </div>
 
     <div class="buttons">

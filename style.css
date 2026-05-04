@@ -1,52 +1,58 @@
 body{
     margin:0;
-    font-family:'Baloo 2', sans-serif;
-    transition:background 0.8s ease;
-    text-align:center;
+    font-family:'Inter', sans-serif;
+    background:#f5f5f5;
 }
 
 /* TITULO */
-h1{
+.title{
     font-family:'Archivo Black', sans-serif;
-    font-size:60px;
-    margin:25px 0;
+    text-align:center;
+    font-size:64px;
+    margin:30px 0;
 }
 
-/* APP CENTRADA */
+/* CENTRADO REAL */
 #app{
     display:flex;
     flex-direction:column;
     align-items:center;
-    margin-top:10px;
+    justify-content:center;
+    min-height:80vh;
 }
 
-/* POSTAL GRANDE REAL */
-.card{
-    width:900px;
-    height:500px;
+/* POSTAL GRANDE Y CENTRADA */
+.scene{
+    perspective:1200px;
+    display:flex;
+    justify-content:center;
+}
 
+.card{
+    width:1000px;
+    height:600px;
     position:relative;
+
     transform-style:preserve-3d;
     transition:transform 0.8s;
 
-    border-radius:14px;
+    border-radius:16px;
     box-shadow:0 30px 80px rgba(0,0,0,0.25);
     cursor:pointer;
 }
 
-/* flip */
 .card.flipped{
     transform:rotateY(180deg);
 }
 
-/* caras */
-.face{
+/* CARAS */
+.front, .back{
     position:absolute;
     width:100%;
     height:100%;
     backface-visibility:hidden;
     display:flex;
-    border-radius:14px;
+    border-radius:16px;
     overflow:hidden;
 }
 
@@ -62,29 +68,31 @@ h1{
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:28px;
     text-align:center;
+    font-size:34px;
+    font-weight:600;
 }
 
-/* BACK */
+/* BACK (info clara) */
 .back{
     transform:rotateY(180deg);
-    background:white;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    padding:40px;
+    padding:60px;
+    text-align:center;
     font-size:18px;
+    line-height:1.6;
 }
 
-/* BOTONES 2D */
+/* BOTONES 2D REALES */
 .buttons{
-    margin-top:20px;
+    margin-top:25px;
 }
 
 button{
-    width:120px;
-    height:45px;
+    width:140px;
+    height:50px;
 
     margin:10px;
 
@@ -95,7 +103,8 @@ button{
     cursor:pointer;
 
     box-shadow:0 6px 0 #000;
-    transition:0.2s;
+    transition:0.15s;
+    font-family:'Inter', sans-serif;
 }
 
 /* efecto 2D real */
@@ -104,24 +113,20 @@ button:active{
     box-shadow:0 2px 0 #000;
 }
 
-/* cambio de color click */
-button.clicked{
-    background:#444;
-}
-
-/* GALLERY FINAL */
+/* GALERÍA FINAL */
 #gallery{
     display:none;
     flex-wrap:wrap;
     justify-content:center;
-    gap:15px;
-    margin-top:40px;
+    align-items:center;
+    gap:20px;
+    padding:60px;
 }
 
 .small{
-    width:180px;
-    height:120px;
-    border-radius:10px;
+    width:260px;
+    height:180px;
+    border-radius:12px;
     overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
 }
