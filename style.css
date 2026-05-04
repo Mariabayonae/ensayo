@@ -1,97 +1,89 @@
 body{
     margin:0;
     font-family:'Baloo 2', sans-serif;
-    background:#f4f4f4;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+    transition:background 0.8s ease;
+    text-align:center;
 }
 
-/* TÍTULO */
+/* TITULO */
 h1{
     font-family:'Archivo Black', sans-serif;
     font-size:60px;
-    margin:30px;
+    margin:25px 0;
 }
 
-/* CENTRAR ESCENA */
-.scene{
-    perspective:1200px;
+/* APP CENTRADA */
+#app{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-top:10px;
 }
 
 /* POSTAL GRANDE REAL */
 .card{
     width:900px;
-    height:520px;
+    height:500px;
 
     position:relative;
     transform-style:preserve-3d;
     transition:transform 0.8s;
 
-    box-shadow:0 30px 70px rgba(0,0,0,0.2);
-    border-radius:12px;
-
+    border-radius:14px;
+    box-shadow:0 30px 80px rgba(0,0,0,0.25);
     cursor:pointer;
 }
 
-/* FLIP */
+/* flip */
 .card.flipped{
     transform:rotateY(180deg);
 }
 
-/* CARAS */
+/* caras */
 .face{
     position:absolute;
     width:100%;
     height:100%;
     backface-visibility:hidden;
-    border-radius:12px;
-    overflow:hidden;
     display:flex;
+    border-radius:14px;
+    overflow:hidden;
 }
 
-/* FRONT = FOTO + NOMBRE (COMO PEDISTE) */
-.front{
-    background:white;
-}
-
+/* FRONT */
 .front img{
     width:65%;
     height:100%;
     object-fit:cover;
 }
 
-/* texto adelante */
-.frontText{
+.front h2{
     width:35%;
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:30px;
-    font-weight:bold;
+    font-size:28px;
     text-align:center;
-    padding:20px;
 }
 
-/* BACK = INFO */
+/* BACK */
 .back{
     transform:rotateY(180deg);
     background:white;
-
     flex-direction:column;
     justify-content:center;
     align-items:center;
     padding:40px;
-    text-align:center;
+    font-size:18px;
 }
 
-/* BOTONES 2D REALES */
-.controls{
-    margin-top:25px;
+/* BOTONES 2D */
+.buttons{
+    margin-top:20px;
 }
 
 button{
-    width:80px;
+    width:120px;
     height:45px;
 
     margin:10px;
@@ -103,11 +95,33 @@ button{
     cursor:pointer;
 
     box-shadow:0 6px 0 #000;
-    transition:0.1s;
+    transition:0.2s;
 }
 
-/* efecto 2D REAL */
+/* efecto 2D real */
 button:active{
     transform:translateY(4px);
     box-shadow:0 2px 0 #000;
+}
+
+/* cambio de color click */
+button.clicked{
+    background:#444;
+}
+
+/* GALLERY FINAL */
+#gallery{
+    display:none;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin-top:40px;
+}
+
+.small{
+    width:180px;
+    height:120px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }

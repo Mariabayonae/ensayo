@@ -1,18 +1,44 @@
- <!-- BACK -->
-    <div class="back face">
-        <h2 id="titleBack"></h2>
-        <p id="desc"></p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Postales del mundo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>POSTALES DEL MUNDO</h1>
+
+<div id="app">
+
+    <div class="card" id="card">
+
+        <div class="front face">
+            <img id="img">
+            <h2 id="title"></h2>
+        </div>
+
+        <div class="back face">
+            <h2 id="titleBack"></h2>
+            <p id="desc"></p>
+        </div>
+
+    </div>
+
+    <div class="buttons">
+        <button id="prev">Anterior</button>
+        <button id="next">Siguiente</button>
     </div>
 
 </div>
 
-</div>
-
-<!-- BOTONES -->
-<div class="controls">
-    <button id="prev">◀</button>
-    <button id="next">▶</button>
-</div>
+<div id="gallery"></div>
 
 <script src="script.js"></script>
 </body>
